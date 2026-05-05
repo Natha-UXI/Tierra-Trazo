@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entre Hojas | Tierra & Trazo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --primary:#fff;
@@ -50,13 +49,21 @@ h2{
 }
 
 .brand-title{
+  font-family: 'Montserrat', sans-serif; /* nueva fuente */
+  font-weight: 700;                      /* más fuerte */
+  letter-spacing: 12px;                  /*  separación tipo tu imagen */
   font-size: clamp(2.2rem, 9vw, 4.5rem);
   line-height: 1.1;
+  .top{
+  font-size: 0.45em;
+  letter-spacing: 12px;
+}
 }
 
 @media(max-width:768px){
   .brand-title{
     font-size: 2.5rem;
+    letter-spacing: 4px; /* 👈 importante reducir en móvil */
   }
 }
 
@@ -633,17 +640,100 @@ input:focus{
   }
 
 }
+/* NAVBAR */
+#navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: 0.4s;
+}
+
+/* CUANDO APARECE */
+#navbar.show{
+  transform: translateY(0);
+}
+
+/* CONTENIDO */
+.nav-container{
+  width: 100%;
+  padding: 1rem 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra TODO */
+  position: relative;
+}
+
+/* LOGO */
+.logo{
+  position: absolute;
+  left: 30px; /* pegado a la izquierda */
+}
+
+.logo img{
+  height: 60px; /*  más grande */
+}
+
+/* LINKS */
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.nav-links a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover{
+  color: #9c332f;
+}
 
 </style>
+
+
+
+
 </head>
 
 <body>
+<nav id="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="logo.png" alt="logo">
+    </div>
+
+    <!-- MENÚ -->
+    <ul class="nav-links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#models">Proyecto</a></li>
+      <li><a href="#video">Videos</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#formulario">Contacto</a></li>
+    </ul>
+
+  </div>
+</nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-video-placeholder"></div>
   <div class="hero-content">
-    <h1 class="brand-title">ENTRE HOJAS</h1>
+    <h1 class="brand-title">
+  <span class="top">ENTRE</span><br>
+  HOJAS
+</h1>
     <a href="#models" class="cta-btn">Explorar</a>
   </div>
 </section>
@@ -1009,6 +1099,22 @@ if ('scrollRestoration' in history) {
 
 window.addEventListener('load', () => {
   window.scrollTo(0, 0);
+});
+</script>
+<script>
+const navbar = document.getElementById('navbar');
+const hero = document.getElementById('hero');
+
+window.addEventListener('scroll', () => {
+
+  const heroHeight = hero.offsetHeight;
+
+  if(window.scrollY > heroHeight - 100){
+    navbar.classList.add('show');
+  } else {
+    navbar.classList.remove('show');
+  }
+
 });
 </script>
 </body>
