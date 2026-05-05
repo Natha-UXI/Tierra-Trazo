@@ -603,6 +603,8 @@ input:focus{
   }
 }
 
+
+
 </style>
 </head>
 
@@ -968,23 +970,23 @@ lightbox.addEventListener('click', (e) => {
 });
 </script>
 <script>
-const cards = document.querySelectorAll('.model-card');
+const wrappers = document.querySelectorAll('.model-image-wrapper');
 
-cards.forEach(card => {
-  card.addEventListener('click', function(e){
+wrappers.forEach(wrapper => {
+  wrapper.addEventListener('click', function(e){
 
-    // evita que se active si clickean el botón
-    if(e.target.classList.contains('explore-btn')) return;
+    const card = wrapper.closest('.model-card');
 
-    // cerrar otros abiertos (opcional pero recomendado)
-    cards.forEach(c => {
+    // cerrar otros
+    document.querySelectorAll('.model-card').forEach(c => {
       if(c !== card){
         c.classList.remove('active');
       }
     });
 
-    // toggle del actual
+    // toggle actual
     card.classList.toggle('active');
+
   });
 });
 </script>
