@@ -302,6 +302,8 @@ h2{
   border-radius:20px;
   cursor:pointer;
   transition:0.3s;
+  position: relative;  /* nuevo */
+  z-index: 5;          /* nuevo */
 }
 
 .explore-btn:hover{
@@ -613,15 +615,15 @@ input:focus{
 @media(max-width:768px){
 
   .area{
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .descripcion{
-    font-size: 12px;
+    font-size: 8px;
   }
 
   .precio-track span{
-    font-size: 12px;
+    font-size: 8px;
     padding-right: 60px;
   }
 
@@ -978,11 +980,12 @@ lightbox.addEventListener('click', (e) => {
 </script>
 <script>
 const wrappers = document.querySelectorAll('.model-image-wrapper');
-const buttons = document.querySelectorAll('.explore-btn');
 
-//  CLICK SOLO EN IMAGEN
 wrappers.forEach(wrapper => {
   wrapper.addEventListener('click', function(e){
+
+    // ⚠️ SOLO si se hizo click en la IMAGEN (no overlay ni botón)
+    if(!e.target.classList.contains('model-img')) return;
 
     const card = wrapper.closest('.model-card');
 
@@ -996,13 +999,6 @@ wrappers.forEach(wrapper => {
     // toggle
     card.classList.toggle('active');
 
-  });
-});
-
-// 👉 BLOQUEAR que el botón active el overlay
-buttons.forEach(btn => {
-  btn.addEventListener('click', function(e){
-    e.stopPropagation(); // 💥 CLAVE
   });
 });
 </script>
