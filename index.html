@@ -15,13 +15,15 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;}
+body{
+  font-family:'Montserrat', sans-serif;
+}
 
 .container{max-width:1200px;margin:auto;padding:2rem;}
 
 h2{
   text-align:center;
-  font-family:'Cinzel';
+  font-family:'Montserrat', sans-serif;
   margin-bottom:2rem;
 }
 
@@ -54,10 +56,11 @@ h2{
   letter-spacing: 12px;                  /*  separación tipo tu imagen */
   font-size: clamp(2.2rem, 9vw, 4.5rem);
   line-height: 1.1;
-  .top{
+}
+
+.top{
   font-size: 0.45em;
   letter-spacing: 12px;
-}
 }
 
 @media(max-width:768px){
@@ -221,7 +224,7 @@ h2{
 .overlay-content {
   text-align: left;
   color: #ffffff;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tipo {
@@ -286,7 +289,7 @@ h2{
 }
 
 .overlay-content h3{
-  font-family:'Cinzel';
+  font-family:'Montserrat', sans-serif;
   margin-bottom:10px;
 }
 
@@ -664,18 +667,19 @@ input:focus{
 
   display: flex;
   align-items: center;
-  justify-content: center; /* centra TODO */
+  justify-content: space-between; /* centra TODO */
   position: relative;
 }
 
 /* LOGO */
 .logo{
-  position: absolute;
   left: 30px; /* pegado a la izquierda */
+  display: flex;
+  align-items: center;
 }
 
 .logo img{
-  height: 60px; /*  más grande */
+  height: 70px; /*  más grande */
 }
 
 /* LINKS */
@@ -683,7 +687,7 @@ input:focus{
   list-style: none;
   display: flex;
   gap: 3rem;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 .nav-links a{
