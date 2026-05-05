@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -996,3 +997,1003 @@ wrappers.forEach(wrapper => {
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entre Hojas | Tierra & Trazo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#fff;
+  --dark:#1a1a1a;
+  --accent:#9c332f;
+  --light:#f9f9f9;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;}
+
+.container{max-width:1200px;margin:auto;padding:2rem;}
+
+h2{
+  text-align:center;
+  font-family:'Cinzel';
+  margin-bottom:2rem;
+}
+
+/* HERO */
+#hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#1a1a1a;
+  position:relative;
+}
+
+.hero-video-placeholder{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:url('https://via.placeholder.com/1920x1080') center/cover;
+}
+
+.hero-content{
+  position:relative;
+  color:#fff;
+  text-align:center;
+}
+
+.brand-title{
+  font-size:5rem;
+}
+
+.cta-btn{
+  margin-top:60px;
+  display:inline-block;
+  padding:1rem 3rem;
+  border:1px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+.cta-btn:hover{
+  background:#fff;
+  color:#1a1a1a;
+}
+
+/* PLANTA TIPO */
+#planta{
+  padding: 5rem 0;
+  text-align: center;
+}
+
+/* CONTENEDOR GENERAL */
+.planta-wrapper{
+  position: relative;
+  width: 100%;
+  max-width: 1400px;   /* controla tamaño total */
+  margin: 0 auto;
+  overflow: hidden;   /* evita que se desborde */
+  border-radius: 10px;
+}
+
+/* IMAGEN */
+.planta-img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* OVERLAY (TEXTO ENCIMA DE LA IMAGEN) */
+.planta-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  opacity: 0;
+  transition: 0.4s;
+  padding: 20px;
+}
+
+/* ACTIVAR SOLO CUANDO PASAS EL MOUSE SOBRE LA IMAGEN */
+.planta-wrapper:hover .planta-overlay{
+  opacity: 1;
+}
+
+/* OVERLAY */
+.planta-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition:0.4s;
+}
+
+/* TEXTO */
+.planta-text{
+  color:#fff;
+  font-size:1.2rem;
+  letter-spacing:1px;
+}
+
+/* HOVER */
+.planta-wrapper:hover .planta-overlay{
+  opacity:1;
+}
+
+.planta-wrapper:hover .planta-img{
+  transform:scale(1.02);
+}
+/* MODELS */
+#models{
+  padding:6rem 0;
+  background:var(--light);
+}
+
+.models-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+}
+
+.model-card{
+  border-radius:8px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.model-card:hover{
+  transform:translateY(-5px);
+}
+
+/* IMAGE WRAPPER */
+.model-image-wrapper{
+  position:relative;
+  overflow:hidden;
+  z-index: 1;
+}
+
+.model-img{
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.model-image-wrapper:hover .model-img{
+  transform:scale(1.05);
+}
+
+/* OVERLAY SOLO IMAGEN */
+.model-overlay{
+  position:absolute;
+  inset:0;
+  z-index: 2; /* encima de la imagen */
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(3px);
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  transition:0.4s;
+}
+
+.model-image-wrapper:hover .model-overlay{
+  opacity:1;
+}
+
+.overlay-content {
+  text-align: left;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.tipo {
+  font-size: 14px;
+  margin: 0;
+}
+.precio-wrapper{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.precio-track{
+  display: flex;
+  width: max-content;
+  animation: scrollPrecio 30s linear infinite;
+}
+
+.precio-track span{
+  white-space: nowrap;
+  padding-right: 120px; /* 👈 ya no exagerado */
+  font-size: 14px;
+}
+
+/* ESTO ES LO QUE ARREGLA EL HUECO */
+@keyframes scrollPrecio{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+/* animación */
+@keyframes scrollPrecio{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+.area {
+  font-size: 48px;
+  color: #ffffff; /* blanco*/
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.area-privada {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+.descripcion {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.overlay-content h3{
+  font-family:'Cinzel';
+  margin-bottom:10px;
+}
+
+/* INFO */
+.model-info{
+  padding:1.5rem;
+  text-align:center;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* BOTÓN 3D */
+.explore-btn{
+  padding:.7rem 1.8rem;
+  background:#1a1a1a;
+  color:#fff;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.explore-btn:hover{
+  background:var(--accent);
+}
+
+/* VIDEO */
+#video{
+  padding:6rem 0;
+}
+
+.video-wrapper{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.video-wrapper iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+/* ZONAS COMUNES */
+#zonas-comunes{
+  background: #1a1a1a; /* franja negra */
+  padding: 6rem 0;
+  color: #fff;
+  overflow: visible;
+}
+
+.zonas-comunes-grid{
+  display: flex;              /*  en vez de grid */
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap;          /*  evita que bajen */
+  overflow-x: auto;           /*  si no caben, scroll horizontal */
+  padding: 0 2rem;
+  padding-top: 10px;
+}
+
+/* cajitas */
+.zonas-comunes-grid div{
+  background: rgba(255,255,255,0.1);
+  padding:1.5rem;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+/* hover bonito */
+.zonas-comunes-grid div:hover{
+  background: rgba(255,255,255,0.2);
+  transform:translateY(-3px);
+}
+
+/* GALLERY */
+#gallery{
+  padding:6rem 0;
+  width: 100%;
+}
+
+/* CONTENEDOR */
+.gallery-slider{
+  overflow: hidden;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* PISTA EN MOVIMIENTO */
+.gallery-track{
+  display: flex;
+  width: max-content;
+  animation: scrollGallery 30s linear infinite;
+}
+.gallery-slider:hover .gallery-track{
+  animation-play-state: paused;
+}
+
+/* IMÁGENES */
+/* CONTENEDOR DE CADA IMAGEN */
+.img-box{
+  width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden; /*  clave para mantener bordes */
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+/* IMAGEN */
+.img-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* HOVER CORRECTO */
+.img-box:hover img{
+  transform: scale(1.08);
+}
+/* ANIMACIÓN */
+@keyframes scrollGallery{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+/* SCROLL ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.8s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+
+/* MAPA */
+#mapa{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 100%;
+  min-height: 500px; /* más alto */
+  margin-top: -40px; /* lo sube visualmente */
+}
+
+/* MAPA GOOGLE */
+.mapa-embed iframe{
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: 0;
+}
+
+/* PANEL DERECHO */
+.mapa-info{
+  background: #9c332f; /* rojo */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.mapa-info-content{
+  max-width: 300px;
+}
+
+.mapa-info h3{
+  margin-top: 1rem;
+  font-size: 16px;
+}
+
+.mapa-info p{
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* ICONOS */
+.mapa-icons{
+  margin-top: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  #mapa{
+    grid-template-columns: 1fr;
+  }
+}
+/* FORMULARIO */
+#formulario{
+  padding: 8rem 0 10rem;
+  background: #f5f5f5;
+}
+
+#form-cita > *{
+  margin-bottom: 1.2rem; /*  MISMA distancia para TODOS */
+}
+
+.tabs{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tab{
+  font-weight: 600;
+  cursor: pointer;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  color: #999;
+}
+
+.tab.active{
+  color: #c0392b; /* ROJO */
+  border-color: #c0392b;
+}
+
+.form-box{
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-row{
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row input{
+  flex: 1;
+}
+
+input{
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input:focus{
+  border-color: #c0392b;
+}
+
+.checkbox{
+  font-size: 12px;
+}
+
+.submit-btn{
+  display: block;
+  margin: auto;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
+}
+/* LIGHTBOX */
+#lightbox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+#lightbox.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lightbox img{
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+/* BOTÓN X */
+#lightbox .close{
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+/* PARA MÓVIL: activar overlay con tap */
+.model-card.active .model-overlay{
+  opacity: 1;
+}
+
+@media (hover: none){
+  .model-image-wrapper:hover .model-overlay{
+    opacity: 0; /* desactiva hover en móvil */
+  }
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-video-placeholder"></div>
+  <div class="hero-content">
+    <h1 class="brand-title">ENTRE HOJAS</h1>
+    <a href="#models" class="cta-btn">Explorar</a>
+  </div>
+</section>
+
+<!-- PLANTA TIPO -->
+<section id="planta">
+  <div class="container">
+    <h2>Planta Tipo</h2>
+
+    <div class="planta-wrapper">
+
+      <!-- IMAGEN -->
+      <img src="planta-tipo.png" class="planta-img">
+
+      <!-- OVERLAY (DEBE ESTAR AQUÍ ADENTRO) -->
+      <div class="planta-overlay">
+        <div>
+          <h3>Distribución de apartamentos</h3>
+          <p>Hover para explorar</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+  </div>
+</section>
+<!-- MODELS -->
+<section id="models" class="fade">
+<div class="container">
+<h2>Tipologías</h2>
+
+<div class="models-grid">
+
+<!-- MODEL A -->
+<div class="model-card">
+
+  <div class="model-image-wrapper">
+    <img src="AptoTipoA.png" class="model-img">
+
+    <div class="model-overlay">
+      <div class="overlay-content">
+        <h3>Tipo 2</h3>
+        <p>Desde $265,000,000</p>
+        <p>42.19 m² Área privada</p>
+        <p>Entrega en obra gris</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="model-info">
+    <h3>Model A</h3>
+    <button class="explore-btn">3D View</button>
+  </div>
+
+</div>
+
+<!-- MODEL B -->
+<div class="model-card">
+
+  <div class="model-image-wrapper">
+    <img src="AptoTipoB.png" class="model-img">
+
+    <div class="model-overlay">
+<div class="overlay-content">
+<div class="precio-wrapper">
+  <div class="precio-track">
+    <!-- BLOQUE ORIGINAL -->
+    <span>Desde $265,000,000</span>
+    <span>Desde $265,000,000</span>
+    <span>Desde $265,000,000</span>
+
+    <!-- DUPLICADO EXACTO -->
+    <span>Desde $265,000,000</span>
+    <span>Desde $265,000,000</span>
+    <span>Desde $265,000,000</span>
+  </div>
+</div>
+  <h2 class="area">42.19 m²</h2>
+
+  <p class="descripcion">
+    Entrega en Obra Gris / Imágenes<br>
+    Sugerencia de Acabados
+  </p>
+</div>
+</div>
+</div>
+
+  <div class="model-info">
+    <h3>Model B</h3>
+    <button class="explore-btn">3D View</button>
+  </div>
+
+</div>
+
+</div>
+</section>
+<!-- ZONAS COMUNES -->
+<section id="zonas-comunes" class="fade">
+    <h2>Zonas Comunes</h2>
+    
+    <div class="zonas-comunes-grid">
+      <div>Salón Infantil</div>
+      <div>Salón Comunal</div>
+      <div>Sala de TV</div>
+      <div>Co-Working</div>
+      <div>Gimnasio</div>
+      <div>Zonas Verdes</div>
+      <div>Aula Yoga</div>
+    </div>
+
+  </div>
+</section>
+<!-- VIDEO -->
+<section id="video" class="fade">
+<div class="container">
+<h2>Proyecto</h2>
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+</div>
+</div>
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery" class="fade">
+  <h2>Galería</h2>
+
+  <div class="gallery-slider">
+    <div class="gallery-track">
+
+      <!-- IMÁGENES -->
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+      </div>
+
+      <!-- DUPLICADAS (para loop) -->
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+      </div>
+
+      <!-- DUPLICADAS (para loop) -->
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+      </div>
+      <!-- DUPLICADAS (para loop) -->
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+      </div>
+
+      <!-- DUPLICADAS (para loop) -->
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+      </div>
+
+      <div class="img-box">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show')
+    }
+  })
+})
+
+
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el))
+</script>
+<section id="mapa">
+
+  <!-- MAPA -->
+  <div class="mapa-embed">
+    <iframe
+  src="https://maps.google.com/maps?q=Portal+de+San+Fason+Bogotá&z=17&output=embed"
+  allowfullscreen>
+</iframe>
+  </div>
+
+  <!-- INFO -->
+  <div class="mapa-info">
+    <div class="mapa-info-content">
+
+      <h3>Dirección:</h3>
+      <p>Kr 24 #22C-08 - Bogotá </p>
+
+      <h3>Horario de atención:</h3>
+      <p>L-S: 9:00 a.m a 5:30 p.m.</p>
+      <p>D: 10:00 a.m a 5:30 p.m.</p>
+
+      <h3>Teléfono:</h3>
+      <p>350 811 5431</p>
+
+      <p style="margin-top:10px;font-weight:600;">
+        Encuentra fácil y rápido a Entre Hojas
+      </p>
+
+      <div class="mapa-icons">
+        📍 📞
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<section id="formulario">
+
+  <div class="tabs">
+    <div class="tab active" onclick="cambiarTab('cita')">Agenda tu cita</div>
+    <div class="tab" onclick="cambiarTab('info')">Más información</div>
+  </div>
+
+  <div class="form-box">
+
+    <!-- FORM CITA -->
+    <form id="form-cita">
+
+      <div class="form-row">
+        <input type="text" placeholder="Nombre">
+        <input type="text" placeholder="Apellidos">
+      </div>
+
+      <input type="email" placeholder="Correo electrónico">
+
+      <input type="tel" placeholder="Número de celular">
+
+      <!-- ESTE SOLO PARA CITA -->
+      <div id="campo-fecha">
+        <input type="date">
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox"> Acepto tratamiento de datos
+      </div>
+
+      <button class="submit-btn">Enviar</button>
+
+    </form>
+
+  </div>
+
+</section>
+<script>
+function cambiarTab(tipo){
+
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => t.classList.remove('active'));
+
+  if(tipo === 'cita'){
+    tabs[0].classList.add('active');
+    document.getElementById('campo-fecha').classList.remove('hidden');
+  }else{
+    tabs[1].classList.add('active');
+    document.getElementById('campo-fecha').classList.add('hidden');
+  }
+
+}
+</script>
+<!-- LIGHTBOX SOLO GALERÍA -->
+<div id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img">
+</div>
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('show')
+    }
+  })
+})
+
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el))
+</script>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+// 👉 SELECCIONA SOLO IMÁGENES DE GALERÍA
+const galleryImages = document.querySelectorAll('.img-box img');
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('#lightbox .close');
+
+// ABRIR
+galleryImages.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.classList.add('active');
+    lightboxImg.src = img.src;
+  });
+});
+
+// CERRAR CON X
+closeBtn.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+
+// CERRAR HACIENDO CLICK AFUERA
+lightbox.addEventListener('click', (e) => {
+  if(e.target !== lightboxImg){
+    lightbox.classList.remove('active');
+  }
+});
+</script>
+<script>
+const wrappers = document.querySelectorAll('.model-image-wrapper');
+
+wrappers.forEach(wrapper => {
+  wrapper.addEventListener('click', function(e){
+
+    const card = wrapper.closest('.model-card');
+
+    // cerrar otros
+    document.querySelectorAll('.model-card').forEach(c => {
+      if(c !== card){
+        c.classList.remove('active');
+      }
+    });
+
+    // toggle actual
+    card.classList.toggle('active');
+
+  });
+});
+</script>
+
+
+
+
+</body>
+</html>
+>>>>>>> 072188824fea36acef5bfc886d4d6ac3b06c5001
