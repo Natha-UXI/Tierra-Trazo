@@ -958,7 +958,9 @@ lightbox.addEventListener('click', (e) => {
 </script>
 <script>
 const wrappers = document.querySelectorAll('.model-image-wrapper');
+const buttons = document.querySelectorAll('.explore-btn');
 
+//  CLICK SOLO EN IMAGEN
 wrappers.forEach(wrapper => {
   wrapper.addEventListener('click', function(e){
 
@@ -971,9 +973,16 @@ wrappers.forEach(wrapper => {
       }
     });
 
-    // toggle actual
+    // toggle
     card.classList.toggle('active');
 
+  });
+});
+
+// 👉 BLOQUEAR que el botón active el overlay
+buttons.forEach(btn => {
+  btn.addEventListener('click', function(e){
+    e.stopPropagation(); // 💥 CLAVE
   });
 });
 </script>
