@@ -739,6 +739,49 @@ input:focus{
   color: #fff;
   cursor: pointer;
 }
+/* LIGHTBOX PLANOS */
+#planta-lightbox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.92);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s;
+
+  z-index:99999;
+}
+
+#planta-lightbox.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+#planta-lightbox img{
+  max-width:90%;
+  max-height:85%;
+  border-radius:14px;
+}
+
+.planta-close{
+  position:absolute;
+  top:25px;
+  right:35px;
+  color:#fff;
+  font-size:42px;
+  cursor:pointer;
+}
+
+
+
+
 /* PARA MÓVIL: activar overlay con tap */
 .model-card.active .model-overlay{
   opacity: 1;
@@ -1417,5 +1460,48 @@ video.addEventListener('loadeddata', () => {
 });
 </script>
 background: #000;
+<script>
+
+/* BOTONES PLANTA */
+const plantaBtns = document.querySelectorAll('.planta-btn');
+
+const plantaLightbox = document.getElementById('planta-lightbox');
+const plantaImg = document.getElementById('planta-lightbox-img');
+const plantaClose = document.querySelector('.planta-close');
+
+/* ABRIR */
+plantaBtns.forEach(btn => {
+
+  btn.addEventListener('click', () => {
+
+    const imagen = btn.getAttribute('data-planta');
+
+    plantaImg.src = imagen;
+
+    plantaLightbox.classList.add('active');
+
+  });
+
+});
+
+/* CERRAR X */
+plantaClose.addEventListener('click', () => {
+
+  plantaLightbox.classList.remove('active');
+
+});
+
+/* CERRAR AFUERA */
+plantaLightbox.addEventListener('click', (e) => {
+
+  if(e.target !== plantaImg){
+
+    plantaLightbox.classList.remove('active');
+
+  }
+
+});
+
+</script>
 </body>
 </html>
