@@ -84,7 +84,7 @@ h2{
 @media(max-width:768px){
   .brand-title{
     font-size: 2.5rem;
-    letter-spacing: 4px; /* 👈 importante reducir en móvil */
+    letter-spacing: 4px; /*  importante reducir en móvil */
   }
 }
 
@@ -351,7 +351,7 @@ h2{
 
 .precio-track span{
   white-space: nowrap;
-  padding-right: 120px; /* 👈 ya no exagerado */
+  padding-right: 120px; /*  ya no exagerado */
   font-size: 14px;
 }
 
@@ -416,12 +416,36 @@ h2{
   border-radius:20px;
   cursor:pointer;
   transition:0.3s;
-  position: relative;  /* nuevo */
-  z-index: 5;          /* nuevo */
+  position: relative;
+  z-index: 5;
 }
 
 .explore-btn:hover{
   background:var(--accent);
+}
+
+/* CONTENEDOR BOTONES */
+.model-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:10px;
+}
+
+/* BOTÓN PLANTA */
+.planta-btn{
+  padding:.7rem 1.8rem;
+  background:#9c332f;
+  color:#fff;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s;
+  font-family:'Montserrat', sans-serif;
+}
+
+.planta-btn:hover{
+  opacity:0.9;
 }
 
 /* VIDEO */
@@ -992,10 +1016,19 @@ input:focus{
 </div>
 </div>
 
-  <div class="model-info">
-    <h3>Tipo A</h3>
+<div class="model-info">
+  <h3>Tipo A</h3>
+
+  <div class="model-buttons">
     <button class="explore-btn">3D View</button>
+
+    <button 
+      class="planta-btn"
+      data-planta="plano-tipo-a.jpg">
+      Planta
+    </button>
   </div>
+</div>
 
 </div>
 
@@ -1030,10 +1063,19 @@ input:focus{
 </div>
 </div>
 
-  <div class="model-info">
-    <h3>Tipo B</h3>
+<div class="model-info">
+  <h3>Tipo A</h3>
+
+  <div class="model-buttons">
     <button class="explore-btn">3D View</button>
+
+    <button 
+      class="planta-btn"
+      data-planta="plano-tipo-a.jpg">
+      Planta
+    </button>
   </div>
+</div>
 
 </div>
 
@@ -1267,6 +1309,15 @@ function cambiarTab(tipo){
 <div id="lightbox">
   <span class="close">&times;</span>
   <img id="lightbox-img">
+</div>
+
+<!-- LIGHTBOX PLANOS -->
+<div id="planta-lightbox">
+
+  <span class="planta-close">&times;</span>
+
+  <img id="planta-lightbox-img">
+
 </div>
 
 <script>
